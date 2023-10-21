@@ -10,12 +10,7 @@ const body = document.querySelector("body");
 buttonChange.addEventListener("click", changeColor);
 
 function changeColor(evt) {
-  // за умови що функція не буде більше використовуватись її можна лишити тут
-  // function getRandomHexColor() {
-  //   return `#${Math.floor(Math.random() * 16777215)
-  //     .toString(16)
-  //     .padStart(6, 0)}`;
-  // }
-  body.style.backgroundColor = getRandomHexColor();
-  colorName.textContent = getRandomHexColor();
+  const newColor = getRandomHexColor();
+  body.style.backgroundColor = newColor;
+  colorName.textContent = newColor;
 }

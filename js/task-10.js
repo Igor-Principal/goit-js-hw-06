@@ -12,20 +12,20 @@ createButton.addEventListener("click", create);
 destroyButton.addEventListener("click", destroy);
 let amount = input.value;
 
-
-
 function create(evt) {
   let amount = input.value;
   destroy();
   createBoxes(amount);
 }
 function createBoxes(amount) {
-  for (let i = Number(amount); i > 0; i -= 1) {
+  let allBoxes = "";
+  for (let i = 1; i <= Number(amount); i += 1) {
     const example = `<div class="box" style="width:${30 + 10 * i}px; height:${
       30 + 10 * i
     }px; background-color:${getRandomHexColor()}"></div>`;
-    container.insertAdjacentHTML("beforeend", example);
+    allBoxes += example;
   }
+  container.insertAdjacentHTML("beforeend", allBoxes);
 }
 
 function destroy() {

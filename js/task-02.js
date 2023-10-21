@@ -8,9 +8,14 @@ const ingredients = [
 ];
 const list = document.querySelector("#ingredients");
 
-ingredients.map(ingredient => {
-  const li = document.createElement('li')
-  li.textContent = ingredient;
-  li.classList.add('item');
-  list.append(li)
-})
+const items = ingredients
+  .map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join("");
+list.insertAdjacentHTML("beforeend", items);
+
+// ingredients.map(ingredient => {
+//   const li = document.createElement('li')
+//   li.textContent = ingredient;
+//   li.classList.add('item');
+//   list.append(li)
+// })

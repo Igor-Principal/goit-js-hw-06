@@ -14,7 +14,7 @@ const images = [
 ];
 const containet = document.querySelector(".gallery");
 
-images.map(({ url, alt }) => {
-  const example = `<li><img  src="${url}" alt="${alt}"></li>`;
-  containet.insertAdjacentHTML("beforeend", example);
-});
+const items = images
+  .map(({ url, alt }) => `<li><img  src="${url}" alt="${alt}"></li>`)
+  .join("");
+containet.insertAdjacentHTML("beforeend", items);
